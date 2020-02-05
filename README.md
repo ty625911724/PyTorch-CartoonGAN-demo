@@ -58,12 +58,12 @@ As with train, some parameters like the weights to load, this can be set by --lo
 
 Examples of the generated outputs:
 
-![Real image1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/cartoon_Gen/1.jpg)
-![cartoon1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/cartoon_Gen/epoch_93_0010.png)  
+![Real image1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/1.jpg)
+![cartoon1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/epoch_93_0010.png)  
 ![Real image2](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/3.jpg)
 ![cartoon2](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/epoch_93_0018.png)  
 ![Real image3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/6.jpg)
-![cartoon3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/raw/samples/cartoon_Gen/epoch_93_0031.png)
+![cartoon3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/epoch_93_0031.png)
 
 ## Acknowledgments
 Due to the fact that this is an unofficial implementation, This Code has some problems that have not been solved. The results that have been shown is the best results in epoch 93. The problems are as follows:
