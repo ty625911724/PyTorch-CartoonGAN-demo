@@ -58,19 +58,19 @@ As with train, some parameters like the weights to load, this can be set by --lo
 
 Examples of the generated outputs:
 
-![Real image1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/cartoon_Gen/1.jpg)
-![cartoon1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/cartoon_Gen/epoch_93_0010.png)  
-![Real image2](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/cartoon_Gen/3.jpg)
-![cartoon2](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/cartoon_Gen/epoch_93_0018.png)  
-![Real image3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/cartoon_Gen/6.jpg)
-![cartoon3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/cartoon_Gen/epoch_93_0031.png)
+![Real image1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/cartoon_Gen/1.jpg)
+![cartoon1](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/cartoon_Gen/epoch_93_0010.png)  
+![Real image2](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/3.jpg)
+![cartoon2](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/epoch_93_0018.png)  
+![Real image3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/6.jpg)
+![cartoon3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/raw/samples/cartoon_Gen/epoch_93_0031.png)
 
 ## Acknowledgments
 Due to the fact that this is an unofficial implementation, This Code has some problems that have not been solved. The results that have been shown is the best results in epoch 93. The problems are as follows:
 1. With the increases of epochs, the results are not always good.
 2. The results are not as good as the official predict implementation, especially the extent of simplifying and the lack of clear black edge of generated images.
 3. Althought balanced by content loss, it has the problem of model collapse in some epochs.  
-![example of model Collpase](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/example_model_Collpase.png)  
+![example of model Collpase](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/example_model_Collpase.png)  
 It will be sincerely appreciated if you could help me solve these problems. 
 
 Code is base on https://github.com/aitorzip/PyTorch-CycleGAN
