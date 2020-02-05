@@ -30,9 +30,9 @@ This command will randomly crop screenshots(under the *data/train/screenShots* d
 ```
 python edgeDilate.py
 ```
-This command will dilate edges of cartoon images(under the *data/train/Cartoon* directory)
-![cartoon image](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/dilate/cartoon.jpg)
-![cartoon blur by dilating the edge](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/tree/master/samples/dilate/cartoon_blur.jpg)
+This command will dilate edges of cartoon images(under the *data/train/Cartoon* directory)  
+![cartoon image](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/dilate/cartoon.jpg)
+![cartoon blur by dilating the edge](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/dilate/cartoon_blur.jpg)
 
 ### 2. Train
 ```
