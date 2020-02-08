@@ -18,6 +18,7 @@ from utils import LambdaLR
 from utils import weights_init_normal
 from datasets import ImageDataset
 import numpy as np
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--epoch', type=int, default=0, help='starting epoch')
@@ -66,7 +67,7 @@ optimizer_Gen = torch.optim.Adam(itertools.chain(netGen.parameters()),
                                 lr=opt.lr, betas=(0.5, 0.999))
 optimizer_Dis = torch.optim.Adam(netDis.parameters(), lr=opt.lr, betas=(0.5, 0.999))
 
-if opt.load_model != None:
+if opt.load_model != None and not "initial_checkpoint" in opt.load_model:
     lr_scheduler_Gen = checkpoint['learning_rate_Gen']
     lr_scheduler_Dis = checkpoint['learning_rate_Dis']
 else:
@@ -147,7 +148,7 @@ if __name__ == '__main__':
                 optimizer_Gen.step()
                 loss_G_value = loss_G.cpu().detach().numpy()
                 loss_G_list.append(loss_G_value)
-                print("\r i" , i , "/" , len(dataloader) , " epoch:", epoch,"/10" ," loss_G:",loss_G_value, end='', flush=True)
+                print("\r i" , i+1 , "/" , len(dataloader) , " epoch:", epoch+1,"/20" ," loss_G:",loss_G_value, end='', flush=True)
             else:
                 # Identity loss
                 # Gen(cartoon) should equal cartoon if real cartoon is fed
@@ -199,15 +200,12 @@ if __name__ == '__main__':
                 loss_D_blur_all = loss_D_blur_all + loss_D_blur.cpu().detach().numpy()
                 loss_GAN_cartoon_all = loss_GAN_cartoon_all + loss_GAN_cartoon.cpu().detach().numpy()
                 loss_content_all = loss_content_all + loss_content.cpu().detach().numpy()
-                if i%10 == 0:
-                    print("\r i" , i , "/" , len(dataloader) , " epoch:", epoch,"/200" ,
-                        " loss_G:%.2f loss_D:%.6f" %(
-                            loss_G_value, loss_D_value),end='', flush=True)
+                print("\r i" , i+1 , "/" , len(dataloader) , " epoch:", epoch+1,"/200" ,
+                    " loss_G:%.2f loss_D:%.6f" %(loss_G_value, loss_D_value),end='', flush=True)
 
         if Initial_phase:
-            if epoch == 11:
+            if epoch == 19:
                 Initial_phase = False
-                epoch = 0
                 print("\nThe Initialization phase have done...")
                 # Save models checkpoints
                 state = {
@@ -218,6 +216,7 @@ if __name__ == '__main__':
                     'learning_rate_Dis': lr_scheduler_Dis
                 }
                 torch.save(state, './output/initial_checkpoint.pth' )
+                break
         else:
             print("\nepoch:", epoch,' loss_G',np.mean(loss_G_list),' loss_GAN_cartoon', loss_GAN_cartoon_all / float(i), ' loss_content', loss_content_all / float(i))
             print("epoch:", epoch,' loss_D',loss_D_loss_all / float(i),' loss_D_real',loss_D_real_all / float(i) ,

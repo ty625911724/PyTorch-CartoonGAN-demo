@@ -71,6 +71,8 @@ GBlur=MyGaussianBlur(radius=2, sigema=1.5)#声明高斯模糊类
 temp=GBlur.template()#得到滤波模版
 
 file_dir = './data/train/Cartoon/'
+if not os.path.exists('./data/train/Cartoon_blur/'):
+    os.makedirs('./data/train/Cartoon_blur/')
 for _, _,files in os.walk(file_dir):
     #read images
     for i in range(0,len(files)):
@@ -79,8 +81,7 @@ for _, _,files in os.walk(file_dir):
         edge_output = edge_detect(src)
         image_dilate = edge_dilate(src,edge_output)
         image_edgeBlur=GBlur.filter(image_dilate, edge_output, temp)
-        if i%50 == 0:
-            print(i)
+        print("\r",i+1,"/",len(files),end = "")
 
         savePath = './data/train/Cartoon_blur/' + str(i).zfill(4) + '.jpg'
         cv.imwrite(savePath, image_edgeBlur)
