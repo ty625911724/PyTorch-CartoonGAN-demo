@@ -66,12 +66,11 @@ Examples of the generated outputs:
 ![cartoon3](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/cartoon_Gen/epoch_93_0031.png)
 
 ## Notes
-Due to the fact that this is an unofficial implementation, This Code has some problems that have not been solved. The results that have been shown is the best results in epoch 93. The problems are as follows:
+Due to the lack of coumputing resources, this Code has some problems that have not been solved. The results that have been shown is the best results in epoch 93. The problems are as follows:
 1. With the increases of epochs, the results are not always good.
-2. The results are not as good as the official predict implementation, especially the extent of simplifying and the lack of clear black edge of generated images.
+2. The results have not been as good as the official predict implementation, in the extent of simplifying and the lack of clear black edge of generated images.
 3. Althought balanced by content loss, it has the problem of model collapse in some epochs.  
 ![example of model Collpase](https://github.com/ty625911724/PyTorch-CartoonGAN-demo/raw/master/samples/example_model_Collpase.png)  
-It will be sincerely appreciated if you could help me solve these problems. 
 
 ## Acknowledgments
 Code is base on https://github.com/aitorzip/PyTorch-CycleGAN
